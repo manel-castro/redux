@@ -1,4 +1,4 @@
-Implements the most basic functionality of react-redux with a bundle size of 5kB.
+Implements the most basic functionality of react-redux with a bundle size of 5.24kB.
 
 Components to use:
 
