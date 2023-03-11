@@ -16,6 +16,7 @@ export type DataCallback = (data: any) => void;
 export interface ListenersInterface {
   propertyName: string;
   callback: DataCallback;
+  uniqueId: string;
 }
 
 export const storeStateListeners: ListenersInterface[] = [];

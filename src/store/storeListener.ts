@@ -1,10 +1,4 @@
-import {
-  deleteCallback,
-  getCallback,
-  setCallback,
-  DataCallback,
-} from "@js-minified/callbacks";
-import { storeState, storeStateListeners } from "./store";
+import { DataCallback, storeState, storeStateListeners } from "./store";
 
 export interface OnStoreChangedPropsInterface {
   propertyName: string;
@@ -19,7 +13,18 @@ export const onStoreChanged = ({
    *
    * TODO: should also control how many listeners are appended
    */
-  storeStateListeners.push({ propertyName, callback });
+  const uniqueId = "" + callback + propertyName + "_storeListener";
+
+  const currentListenerIndex = storeStateListeners.findIndex(
+    (item) => item.uniqueId === uniqueId
+  );
+
+  const newData = { propertyName, callback, uniqueId };
+  if (currentListenerIndex === -1) {
+    storeStateListeners.push(newData);
+  } else {
+    storeStateListeners.splice(currentListenerIndex, 1, newData);
+  }
 };
 
 export interface GetStoreStateValuePropsInterface {
