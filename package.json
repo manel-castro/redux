@@ -1,7 +1,7 @@
 {
-  "name": "@react-mini/redux",
+  "name": "@js-minified/store",
   "version": "1.0.30",
-  "description": "Implements the most basic functionality of react-redux with a bundle size of 6.1 kB.",
+  "description": "Implements the most basic functionality of react-redux store but in Vanilla JS.",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "files": [

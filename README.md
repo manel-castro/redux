@@ -1,8 +1,8 @@
-Implements the most basic functionality of react-redux with a bundle size of 5.24kB.
+Implements the most basic functionality of react-redux store but in Vanilla JS.
 
 Components to use:
 
-Example:
+It can be easily integrated in React, example:
 
 ```JSX
 import React, { useState } from "react";
