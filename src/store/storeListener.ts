@@ -1,4 +1,10 @@
-import { DataCallback, storeState, storeStateListeners } from "./store";
+import {
+  deleteCallback,
+  getCallback,
+  setCallback,
+  DataCallback,
+} from "@js-minified/callbacks";
+import { storeState, storeStateListeners } from "./store";
 
 export interface OnStoreChangedPropsInterface {
   propertyName: string;
@@ -9,6 +15,10 @@ export const onStoreChanged = ({
   propertyName,
   callback,
 }: OnStoreChangedPropsInterface) => {
+  /**
+   *
+   * TODO: should also control how many listeners are appended
+   */
   storeStateListeners.push({ propertyName, callback });
 };
 
